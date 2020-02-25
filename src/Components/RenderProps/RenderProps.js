@@ -2,6 +2,7 @@ import React from 'react'
 import '../style.css'
 import Toggle from './Toggle'
 import Square from '../HOCS/Square'
+import ToggleRenderProps from './ToggleRenderProps'
 
 const RenderProps = props => {
   return (
@@ -19,7 +20,22 @@ const RenderProps = props => {
       <Toggle>
         <Square isAdmin darkMode />
       </Toggle>
+      <ToggleRenderProps
+        render={(isVisible, setIsVisible) => {
+          return (
+            <div>
+              {isVisible && 'HELLO WORLD'}
+              <button
+                onClick={() => setIsVisible(!isVisible)}
+              >
+                TOGGLE ME SILLY
+              </button>
+            </div>
+          )
+        }}
+      />
     </section>
   )
 }
+
 export default RenderProps
