@@ -1,5 +1,7 @@
 import React from 'react'
 import '../style.css'
+import Toggle from './Toggle'
+import Square from '../HOCS/Square'
 
 const RenderProps = props => {
   return (
@@ -14,6 +16,9 @@ const RenderProps = props => {
           Docs
         </a>
       </h1>
+      <Toggle>
+        <Square isAdmin darkMode />
+      </Toggle>
     </section>
   )
 }
